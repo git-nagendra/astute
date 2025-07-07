@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap");
+:root {
+  --color-background: #f5f5fa;
+  --color-white: #ffffff;
+  --color-black: #878a99;
+  --color-border: rgb(230, 227, 227);
+  --color-header-bg: #0fc1d1;
+  --color-brand-primary: #1f98a6;
+  --color-brand-accent: #24b9c6;
+  --color-brand-hover: #0b7a84;
+  --color-user-icon: #13818c;
+  --color-dropdown-hover: #f1f1f1;
+  --color-child-hover: rgb(34, 200, 229);
+  --color-link-text: #333;
+  --color-heading: #1f98a6;
+  --color-menu-text: #ffffff;
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+}
+/* === Font Weight Utilities: Encode Sans Semi Expanded === */
+.font-thin {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  font-weight: 100;
+}
+.font-extralight {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  font-weight: 200;
+}
+.font-light {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  font-weight: 300;
+}
+.font-regular {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  font-weight: 400;
+}
+.font-medium {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  font-weight: 500;
+}
+.font-semibold {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  font-weight: 600;
+}
+.font-bold {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  font-weight: 700;
+}
+.font-extrabold {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  font-weight: 800;
+}
+.font-black {
+  font-family: "Encode Sans Semi Expanded", sans-serif;
+  font-weight: 900;
+}
+
+form label {
+  font-weight: 500;
+  color: #131820 !important;
+  display: block;
+  font-size: 13px;
+}
+
+.form-control,
+textarea.form-control,
+select.form-control {
+  border-radius: 3px;
+  border: 1px solid #cbd5e1;
+  box-shadow: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: #ffffff;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  color: #111827;
+  width: 100%;
+}
+
+.form-control:focus,
+textarea.form-control:focus {
+  border-color: #0b7a84be;
+  outline: none;
+  box-shadow: none;
+}
+
+input[type="date"].form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  color: #111827;
+  width: 100%;
+  cursor: pointer;
+}
+
+input[type="date"].form-control:focus {
+  border-color: #0b7a84be;
+  outline: none;
+  box-shadow: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(35%) sepia(83%) saturate(1800%) hue-rotate(175deg)
+    brightness(90%) contrast(90%);
+  cursor: pointer;
+}
+
+input[type="date"]:not(:focus):invalid::-webkit-datetime-edit {
+  color: #999;
+  font-size: 13px;
+}
+
+textarea.form-control {
+  min-height: 100px;
+  resize: vertical;
+}
+
+::placeholder {
+  color: #989797 !important;
+  font-size: 13px;
+}
+
+.form-wrapper {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.custom-select-wrapper {
+  position: relative;
+  user-select: none;
+}
+
+.custom-select-trigger {
+  background-color: #f4f6f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  padding: 0.6rem 0.75rem;
+  cursor: pointer;
+  color: #999 !important;
+  font-size: 13px;
+  position: relative;
+}
+
+.custom-select-trigger::after {
+  content: "▼";
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: #0b7a85;
+}
+
+.custom-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  font-size: 14px;
+}
+
+.custom-options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-options::-webkit-scrollbar-thumb {
+  background: #e9f1f1;
+  border-radius: 30px;
+}
+
+.custom-option {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: #333;
+}
+
+.custom-option:hover {
+  background-color: #cce5ff;
+}
+
+.custom-option.selected {
+  background-color: #0b7a84be !important ;
+  color: #fff;
+}
+
+.custom-options.open {
+  display: block;
+}
+
+
+.t_icon i {
+  color: #0b7a84 !important; /* Default icon color */
+  margin-right: 10px !important;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  background:#e1e1e1b5;
+}
+
+.t_icon i:hover {
+  color: #14828c;        /* Your brand color on hover */
+  transform: scale(1.2); /* Optional zoom effect */
+  background:#ccc;
+}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Error Message UI</title>
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <style>
+    body {
+      background: #f1f1f1;
+      font-family: "Cabin", sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 38%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #FFF;
+      padding: 1em 2em;
+    }
+
+    .heading h2 span {
+      position: relative;
+      bottom: 3px;
+      left: 1em;
+      font-size: .8rem;
+      background: #1E73BE;
+      padding: 2px 10px;
+      color: #FFF;
+      border-radius: 3px;
+      text-transform: capitalize;
+    }
+
+    .xd-message {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-height: 60px;
+      background: #FFF;
+      border: 1px solid #455870;
+      margin-bottom: 1rem;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.292);
+      position: fixed;
+      right: -400px;
+      top: 20px;
+      min-width: 300px;
+      max-width: 400px;
+      z-index: 999;
+      opacity: 0;
+      transition: right 0.5s ease, opacity 0.5s ease;
+    }
+
+    .xd-message.show {
+      right: 20px;
+      opacity: 1;
+    }
+
+    .xd-message-icon {
+      background: #455870;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      min-height: 60px;
+      color: #FFF;
+      font-size: 1.6rem;
+    }
+
+    .xd-message-content {
+      flex: 1;
+      padding-left: 1rem;
+      color: #455870;
+    }
+
+    .xd-message-content p {
+      margin: 0;
+    }
+
+    .xd-message-close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      color: #455870;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .msg-danger {
+      border-color: #b05150;
+    }
+
+    .msg-danger .xd-message-icon {
+      background: #b05150;
+      color: #fff;
+    }
+
+    .msg-danger .xd-message-content {
+      color: #b05150;
+    }
+
+    .msg-success {
+      border-color: #47ae74;
+    }
+
+    .msg-success .xd-message-icon {
+      background: #47ae74;
+      color: #fff;
+    }
+
+    .msg-success .xd-message-content {
+      color: #47ae74;
+    }
+
+    .msg-warning {
+      border-color: #ef974b;
+    }
+
+    .msg-warning .xd-message-icon {
+      background: #ef974b;
+      color: #fff;
+    }
+
+    .msg-warning .xd-message-content {
+      color: #ef974b;
+    }
+
+    .hide {
+      transition: all .5s ease;
+      opacity: 0;
+      visibility: hidden;
+      animation: hideMsgAlert 1s;
+    }
+
+    @keyframes hideMsgAlert {
+      0% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+
+    @media only screen and (max-width: 1000px) {
+      .container {
+        width: 60%;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      .container {
+        width: 90%;
+      }
+
+      .heading span {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <h2>Message Alert <span>Xpressdocs - E2E</span></h2>
+    </div>
+
+    <button onclick="showMessage('danger')">Show Error</button>
+    <button onclick="showMessage('success')">Show Success</button>
+    <button onclick="showMessage('warning')">Show Warning</button>
+  </div>
+
+  <div id="msg-danger" class="xd-message msg-danger hidden">
+    <div class="xd-message-icon">
+      <i class="ion-close-circled"></i>
+    </div>
+    <div class="xd-message-content">
+      <p>Something went wrong! Please try again.</p>
+    </div>
+    <div class="xd-message-close">
+      <i class="ion-close-round close-icon"></i>
+    </div>
+  </div>
+
+  <div id="msg-success" class="xd-message msg-success hidden">
+    <div class="xd-message-icon">
+      <i class="ion-checkmark-circled"></i>
+    </div>
+    <div class="xd-message-content">
+      <p>Your action was successful!</p>
+    </div>
+    <div class="xd-message-close">
+      <i class="ion-close-round close-icon"></i>
+    </div>
+  </div>
+
+  <div id="msg-warning" class="xd-message msg-warning hidden">
+    <div class="xd-message-icon">
+      <i class="ion-alert-circled"></i>
+    </div>
+    <div class="xd-message-content">
+      <p>Warning! Please check your input.</p>
+    </div>
+    <div class="xd-message-close">
+      <i class="ion-close-round close-icon"></i>
+    </div>
+  </div>
+
+  <script>
+    const messages = document.querySelectorAll('.xd-message');
+
+    document.querySelectorAll('.xd-message .close-icon').forEach(function(closeIcon) {
+      closeIcon.addEventListener('click', function() {
+        const msg = this.closest('.xd-message');
+        msg.classList.remove('show');
+        setTimeout(() => {
+          msg.classList.add('hidden');
+        }, 500);
+      });
+    });
+
+    function showMessage(type) {
+      messages.forEach(msg => msg.classList.remove('show'));
+      messages.forEach(msg => msg.classList.add('hidden'));
+
+      const msgBox = document.getElementById(`msg-${type}`);
+      msgBox.classList.remove('hidden');
+      setTimeout(() => {
+        msgBox.classList.add('show');
+      }, 10);
+    }
+  </script>
+</body>
+</html>

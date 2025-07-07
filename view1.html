@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astute | Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/form.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="header_wrapper">
+      <div class="header_1">
+        <header
+          class="navbar d-flex justify-content-between align-items-center"
+        >
+          <div class="logo">
+            <img
+              src="./assets/images/Astute.png"
+              alt="Logo"
+              style="height: 40px"
+            />
+          </div>
+          <div class="role">
+            <h6 class="w-100 m-0">
+              Astute Insurance Surveyors & Loss Assessors Pvt Ltd
+            </h6>
+            <h6 class="w-100 m-0 text-center mt-1 admin_colo">Role ( Admin)</h6>
+          </div>
+
+          <div class="nav-icons d-flex align-items-center gap-3">
+            <div class="d-none d-lg-flex gap-3">
+              <div
+                class="setting d-flex align-items-center justify-content-center profile-toggle-wrapper position-relative"
+              >
+                <i class="far fa-comments fs-5 cursor-pointer"></i>
+                <div class="profile-dropdown Notifications shadow">
+                  <div class="p-2 border-bottom rounded-top">
+                    <div class="row">
+                      <div class="col-12">
+                        <h6
+                          class="m-0 px-2 py-1 font-16 fw-medium text-black-500 text-start"
+                        >
+                          Message
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="setting d-flex align-items-center justify-content-center profile-toggle-wrapper position-relative"
+              >
+                <i class="far fa-bell fs-5 cursor-pointer"></i>
+                <div class="profile-dropdown Notifications shadow">
+                  <div class="p-2 border-bottom rounded-top">
+                    <div class="row">
+                      <div class="col-12">
+                        <h6
+                          class="m-0 px-2 py-1 font-16 fw-medium text-black-500 text-start"
+                        >
+                          Notifications
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="profile-toggle-wrapper position-relative profile-toggle-wrapper position-relative"
+            >
+              <div
+                class="d-flex align-items-center gap-2 ps-3 ms-2 profile-toggle"
+                style="cursor: pointer"
+              >
+                <div class="text-end">
+                  <h6 class="m-0 client fw-bold text-black-300">
+                    Nagendra Patel
+                  </h6>
+                  <small
+                    class="d-block text-black-500"
+                    style="font-size: 12px; margin-top: 2px"
+                  >
+                    Login: 30 June, 03:15 PM
+                  </small>
+                </div>
+                <img
+                  class="profile-img rounded-circle"
+                  src="./assets/images/artist-white.jpg"
+                  alt="Profile"
+                />
+              </div>
+
+              <!-- Dropdown Menu -->
+              <div class="profile-dropdown shadow">
+                <ul class="list-unstyled m-0">
+                  <li>
+                    <a href="#"><i class="fas fa-user me-2"></i>Profile</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fas fa-cog me-2"></i>Settings</a>
+                  </li>
+                  <li>
+                    <a href="login.html"
+                      ><i class="fas fa-sign-out-alt me-2"></i>Logout</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <button class="menu-toggle d-lg-none" id="menuToggle">
+                <i class="fas fa-bars"></i>
+              </button>
+          </div>
+        </header>
+      </div>
+
+      <div class="header_2 py-1">
+        <div class="nav py-0 d-flex align-items-center justify-content-between">
+          <ul class="nav-menu" id="navMenu">
+            <!-- Original Menu Items -->
+            <li class="nav-item position-relative">
+              <a class="nav-link" href="index.html"
+                ><i class="fas fa-home"></i> Home</a
+              >
+            </li>
+            <li class="nav-item position-relative">
+              <span class="nav-link d-flex align-items-center"
+                ><i class="fas fa-building"></i> Company
+                <span class="toggle-icon"
+                  ><i class="fas fa-chevron-down ms-2"></i></span
+              ></span>
+              <ul class="child-menu open-left">
+                <li><a href=""> Company Master</a></li>
+                <li><a href=""> Department</a></li>
+                <li><a href=""> Sub Department</a></li>
+                <li><a href=""> Company User</a></li>
+                <li><a href="user-detail.html"> User Activity</a></li>
+              </ul>
+            </li>
+            <li class="nav-item position-relative">
+              <span class="nav-link d-flex align-items-center"
+                ><i class="fas fa-shield"></i> Insurer
+                <span class="toggle-icon"
+                  ><i class="fas fa-chevron-down ms-2"></i
+                ></span>
+              </span>
+              <ul class="child-menu open-left">
+                <li><a href="user-detail.html"> Insurer Master</a></li>
+                <li><a href="branch.html"> Branch</a></li>
+                <li><a href="branch-person.html"> Branch Person</a></li>
+              </ul>
+            </li>
+            <li class="nav-item position-relative">
+              <span class="nav-link d-flex align-items-center"
+                ><i class="fas fa-briefcase"></i> Cases
+                <span class="toggle-icon"
+                  ><i class="fas fa-chevron-down ms-2"></i
+                ></span>
+              </span>
+              <ul class="child-menu open-left">
+                <li><a href="user-detail.html"> Create New</a></li>
+                <li><a href="coordination.html"> Coordination</a></li>
+                <li><a href="pending-survey.html"> Pending for Survey</a></li>
+                <li><a href="ila-lor.html"> Pending for ILA &amp; LOR</a></li>
+                <li><a href="pending-docs.html"> Pending for Docs</a></li>
+                <li><a href="pending-fsr.html"> Pending for FSR</a></li>
+                <li><a href="pending-qc.html"> Pending for QC</a></li>
+              </ul>
+            </li>
+            <li class="nav-item position-relative">
+              <span class="nav-link d-flex align-items-center"
+                ><i class="fas fa-file-invoice-dollar"></i> Billing
+                <span class="toggle-icon"
+                  ><i class="fas fa-chevron-down ms-2"></i
+                ></span>
+              </span>
+              <ul class="child-menu open-left">
+                <li><a href="billing.html"> Pending for Billing</a></li>
+                <li>
+                  <a href="close-claim.html"> Dispatch &amp; Close Claim</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item position-relative">
+              <span class="nav-link d-flex align-items-center"
+                ><i class="fas fa-money-check"></i> Expense Mngt
+                <span class="toggle-icon"
+                  ><i class="fas fa-chevron-down ms-2"></i
+                ></span>
+              </span>
+              <ul class="child-menu open-left">
+                <li>
+                  <a href="check-expense.html"> Check Employee Expense</a>
+                </li>
+                <li>
+                  <a href="approved-expense.html"> Approved Employee Expense</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <span class="nav-link"
+                ><i class="fas fa-ellipsis-h"></i> More</span
+              >
+              <ul class="child-menu">
+                <li class="nav-item position-relative">
+                  <a class="nav-link" href="user-detail.html"
+                    ><i class="fas fa-search"></i> User Profile</a
+                  >
+                </li>
+                <li class="nav-item position-relative">
+                  <span class="nav-link Expense_meg"
+                    ><i class="fas fa-database"></i>Forms</span
+                  >
+                  <ul class="child-menu open-left_2">
+                    <li><a href="company.html">Form Layout 1</a></li>
+                    <li><a href="company1.html">Form Layout 2</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item position-relative">
+                  <span class="nav-link Expense_meg"
+                    ><i class="fas fa-cogs"></i> Tables</span
+                  >
+                  <ul class="child-menu open-left_2">
+                    <li>
+                      <a href="view.html">Table 1</a>
+                    </li>
+                    <li><a href="view1.html">Table 2</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <a href="user-detail.html">
+            <button type="button" class="btn btn-soft btn-sm">
+              User Profile
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div
+            class="d-flex w-100 align-items-start justify-content-between flex-wrap gap-3"
+          >
+            <!-- Title & Subtitle -->
+            <div class="d-flex flex-column">
+              <h5 class="mb-0 view_title font-bold">Company Master</h5>
+              <p class="p-0 m-0 sub_title font-medium mt-1">
+                50+ items • Updated a few seconds ago
+              </p>
+            </div>
+
+            <!-- Actions Section in One Line -->
+            <div class="d-flex flex-wrap align-items-center gap-2">
+              <!-- Action Buttons -->
+              <button type="button" class="btn btn-soft btn-soft-1 btn-lg">
+                New
+              </button>
+              <button type="button" class="btn btn-soft btn-soft-1 btn-lg">
+                Export Report
+              </button>
+
+              <!-- Toggle Switch -->
+              <div class="switch-toggle switch-toggle_1">
+                <input
+                  class="switch-toggle-checkbox"
+                  type="checkbox"
+                  id="pricing-plan-switch"
+                />
+                <label class="switch-toggle-label" for="pricing-plan-switch">
+                  <span>Favorites</span>
+                  <span>Non Favorites</span>
+                </label>
+              </div>
+
+              <!-- Search Form -->
+              <form
+                role="search"
+                method="get"
+                class="search-form form"
+                action=""
+              >
+                <label>
+                  <span class="screen-reader-text">Search for...</span>
+                  <input
+                    type="search"
+                    class="search-field"
+                    placeholder="Type something..."
+                    name="s"
+                  />
+                </label>
+                <button type="submit" class="search-submit button">
+                  <i class="fas fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6">
+          <!-- Card 2 -->
+          <div class="card ticket-card mb-3">
+            <div
+              class="card-body d-flex justify-content-between mt-4 align-items-start flex-wrap"
+            >
+              <!-- Left section -->
+              <div class="d-flex">
+                <img
+                  src="https://i.ibb.co/VVbKn7g/real-estate-icon.png"
+                  alt="icon"
+                  class="me-3"
+                  style="width: 40px; height: 40px"
+                />
+                <div class="name_h">
+                  <h6 class="fw-bold mb-2">
+                    M/s Tata AIG General Insurance Company Limited
+                  </h6>
+                  <p class="mb-2"><strong>Insured Br:</strong> Noida - Tata</p>
+                  <p class="mb-2">
+                    <strong>Insured Name:</strong> M/s Jindal Steel & Power
+                    Limited
+                  </p>
+                  <p class="mb-2">
+                    <strong>Intimation Date:</strong> <span>23/06/2025 </span
+                    ><strong class="ms-3">Next Follow Up:</strong>
+                    <span>23/06/2025</span>
+                  </p>
+                  <p class="mb-2">
+                    <strong>Survey Location:</strong> Jharkhand - Jamshedpur
+                  </p>
+                  <div class="mb-2 status-highlight gap-2 d-flex table_2">
+                    <div class="New">New Case</div>
+                    <div class="Claim">Claim Ageing ~ 9</div>
+                    <div class="for_btn">
+                      <div class="action-dropdown">
+                        <button class="dropdown-toggle-btn">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div class="dropdown-menu-custom">
+                          <a href="#"><i class="fas fa-eye"></i> View</a>
+                          <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                          <a href="#"
+                            ><i class="fas fa-clipboard-list"></i> Log</a
+                          >
+                          <a href="#"><i class="fas fa-sync-alt"></i> Update</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p class="mb-4 gap-2">
+                    <strong>Remarks :</strong>
+                    <span>
+                      The consignment is on process of unloading & segregation
+                      currently it is in USA</span
+                    >
+                  </p>
+                </div>
+              </div>
+              <!-- Right section -->
+              <div class="text-end ms-auto d-flex align-items-end">
+                <small class="time text-danger mt-2">23 Jun, 2025</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <!-- Card 2 -->
+          <div class="card ticket-card mb-3">
+            <div
+              class="card-body d-flex justify-content-between mt-4 align-items-start flex-wrap"
+            >
+              <!-- Left section -->
+              <div class="d-flex">
+                <img
+                  src="https://i.ibb.co/VVbKn7g/real-estate-icon.png"
+                  alt="icon"
+                  class="me-3"
+                  style="width: 40px; height: 40px"
+                />
+                <div class="name_h">
+                  <h6 class="fw-bold mb-2">
+                    M/s Tata AIG General Insurance Company Limited
+                  </h6>
+                  <p class="mb-2"><strong>Insured Br:</strong> Noida - Tata</p>
+                  <p class="mb-2">
+                    <strong>Insured Name:</strong> M/s Jindal Steel & Power
+                    Limited
+                  </p>
+                  <p class="mb-2">
+                    <strong>Intimation Date:</strong> <span>23/06/2025 </span
+                    ><strong class="ms-3">Next Follow Up:</strong>
+                    <span>23/06/2025</span>
+                  </p>
+                  <p class="mb-2">
+                    <strong>Survey Location:</strong> Jharkhand - Jamshedpur
+                  </p>
+                  <div class="mb-2 status-highlight gap-2 d-flex table_2">
+                    <div class="New">New Case</div>
+                    <div class="Claim">Claim Ageing ~ 9</div>
+                    <div class="for_btn">
+                      <div class="action-dropdown">
+                        <button class="dropdown-toggle-btn">
+                          <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                        <div class="dropdown-menu-custom">
+                          <a href="#"><i class="fas fa-eye"></i> View</a>
+                          <a href="#"><i class="fas fa-edit"></i> Edit</a>
+                          <a href="#"
+                            ><i class="fas fa-clipboard-list"></i> Log</a
+                          >
+                          <a href="#"><i class="fas fa-sync-alt"></i> Update</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mb-4 gap-2">
+                    <strong>Remarks :</strong>
+                    <span>
+                      The consignment is on process of unloading & segregation
+                      currently it is in USA</span
+                    >
+                  </p>
+                </div>
+              </div>
+              <!-- Right section -->
+              <div class="text-end ms-auto d-flex flex-column align-items-end">
+                <small class="time text-danger mt-2">23 Jun, 2025</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
