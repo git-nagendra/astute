@@ -1015,6 +1015,7 @@ tbody tr {
   font-weight: 500;
   font-size: 13px;
   padding: 5px 12px;
+  border-radius: 0.15rem;
   border: none;
   border-bottom: 3px solid #0b7a8400;
   transition: all 0.2s ease-in-out;
@@ -1121,7 +1122,6 @@ tbody tr {
 body.no-scroll {
   overflow: hidden;
 }
-
 .open-popup-btn:hover {
   background-color: #357bd8;
 }
@@ -1146,18 +1146,30 @@ body.no-scroll {
 /* Popup Box */
 .custom-popup-box {
   background: #fff;
-  padding: 20px 25px;
+  padding: 15px 25px;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   transform: scale(0.7);
   transition: transform 0.3s ease-in-out;
-  min-width: 450px;
+  max-width: 90vw;
+  width: 450px;
+  box-sizing: border-box;
   position: relative;
+  margin: 10px;
+}
+
+/* Responsive Popup for Mobile */
+@media (max-width: 576px) {
+  .custom-popup-box {
+    width: 90%;
+    padding: 20px;
+  }
 }
 
 .popup_heading {
   color: #0b7a84;
 }
+
 /* Close Button */
 .close-btn {
   height: 30px;
@@ -1168,23 +1180,10 @@ body.no-scroll {
   color: #2b2929ad;
   cursor: pointer;
   border-radius: 0.35rem;
-}
-
-/* Confirm Button */
-.confirm-btn {
-  margin-top: 20px;
-  background-color: #28a745;
+  position: absolute;
+  top: 10px;
+  right: 10px;
   border: none;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s ease;
-}
-
-.confirm-btn:hover {
-  background-color: #218838;
 }
 
 /* Show Popup */
@@ -1197,6 +1196,7 @@ body.no-scroll {
 .popup-overlay.show .custom-popup-box {
   transform: scale(1);
 }
+
 
 .add_icon {
   background-color: #2b9aa4;
