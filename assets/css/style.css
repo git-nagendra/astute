@@ -104,7 +104,6 @@ h6 {
   text-transform: uppercase;
 }
 .main-content {
-  max-width: 90rem; /* 1460px */
   width: 100%;
   margin: 1rem auto !important; /* 20px */
   overflow: hidden;
@@ -1044,7 +1043,7 @@ tbody tr {
 .info-value {
   color: #000000;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   display: inline-block;
 }
 .sf-primary-text {
